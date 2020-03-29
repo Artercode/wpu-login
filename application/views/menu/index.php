@@ -4,10 +4,14 @@
    <!-- Page Heading -->
    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
+
+
    <div class="row">
       <div class="col-lg-6">
          <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
+
          <?= $this->session->flashdata('message'); ?>
+
          <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Add New Menu</a>
 
          <table class="table table-hover">
@@ -41,6 +45,11 @@
 <!-- End of Main Content -->
 
 
+
+
+
+
+
 <!-- Modal Menu-->
 <div class="modal fade" id="newMenuModal" tabindex="-1" role="dialog" aria-labelledby="newMenuModalLabel" aria-hidden="true">
    <div class="modal-dialog" role="document">
@@ -51,7 +60,6 @@
                <span aria-hidden="true">&times;</span>
             </button>
          </div>
-
          <form action="<?= base_url('menu'); ?>" method="post">
             <div class="modal-body">
                <div class="form-group">

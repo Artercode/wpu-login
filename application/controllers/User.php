@@ -4,6 +4,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User extends CI_Controller
 {
+   public function __construct()
+   {
+      parent::__construct();
+      is_logged_in(); // nama bebas methodnya ada di helper
+   }
+
    public function index()
    {
       $data['title'] = 'My Profile';
