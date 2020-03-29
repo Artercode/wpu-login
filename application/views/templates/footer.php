@@ -48,6 +48,29 @@
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
 
+<!-- ajax checkbox -->
+<script>
+   // cari form-ckeck-input - saat click jalankan fungsi ..
+   $('.form-check-input').on('click', function() {
+      // ambil data dari role-access - menu dan role di bagian form-check-input
+      const menuId = $(this).data('menu');
+      const roleId = $(this).data('role');
+      // jalankan ajax
+      $.ajax({
+         url: "<?= base_url('admin/changeaccess'); ?>", // changeaccess ada di admin.php
+         type: 'post',
+         data: { // data object
+            menuId: menuId,
+            roleId: roleId
+         },
+         // ketika berhasil diarahkan ke halaman
+         success: function() {
+            document.location.href = "<?= base_url('admin/roleaccess/'); ?>" + roleId;
+         }
+      });
+   });
+</script>
+
 </body>
 
-</html>a
+</html>
